@@ -21,7 +21,7 @@ class CarController extends Controller
     {
         //
          $car = Car::get();
-      return view('profile', array('car' => $car));
+     return view('profile', array('car' => $car));
     }
 
     /**

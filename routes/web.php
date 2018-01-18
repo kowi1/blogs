@@ -12,16 +12,22 @@
 */
 use App\Car;
 
-Route::get('/', function () {
-    $cars = Car::all();
+use  Illuminate\Http\Request;
+Route::get('/', 'HomeController@index');
 
-    return View::make('profile')->with('cars',$cars);
-});
+//Route::get('/', function () {
+   // $cars = Car::all();
+
+   // return View::make('profile')->with('cars',$cars);
+//});
 
 //Route::resource('cars', 'CarController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'AdminController@index');
+Route::get('/role', 'RoleController@index');
+Route::get('/role/register', 'RoleController@register');
 Route::get('cars/{cars_id?}',function($cars_id){
     $car = Car::find($cars_id);
 
@@ -31,12 +37,12 @@ Route::get('cars/{cars_id?}',function($cars_id){
 Route::post('cars',function(Request $request){
     $car = Car::create($request->all());
 
-    return Response::json($car);
+    return Response::json($request);
 });
 
 Route::put('cars/{cars_id?}',function(Request $request,$cars_id){
     $car = Car::find($cars_id);
-
+    $task= Car::first();
     $task->model = $request->model;
     $task->produced_on = $request->produced_on;
 
@@ -50,3 +56,5 @@ Route::delete('cars/{cars_id?}',function($cars_id){
 
     return Response::json($car);
 });
+
+

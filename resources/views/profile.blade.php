@@ -43,6 +43,11 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             DataTables Advanced Tables
+                            <div class="col-sm-9">
+                        
+                               <button class="btn btn-warning btn-xs btn-detail add-modal">Add New</button>
+                        
+                            </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -52,7 +57,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Model</th>
-                                            <th>Date of Manufacture</th>
+                                            <th>Date of Manufacturing</th>
                                             
                                         </tr>
                                     </thead>
@@ -72,7 +77,7 @@
                 </tbody>
                                     </tbody>
                                 </table>
-                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -83,22 +88,83 @@
                             <form id="frmTasks" name="frmTasks" class="form-horizontal" novalidate="">
 
                                 <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">ID</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="idInput" name="task" placeholder= value="">
+                                    </div>
+                                </div>
+                                <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">make</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="makeInput" name="task" placeholder="Task" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group error">
                                     <label for="inputTask" class="col-sm-3 control-label">Model</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control has-error" id="task" name="task" placeholder="Task" value="">
+                                        <input type="text" class="form-control has-error" id="modelInput" name="task" placeholder="Task" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">Created at</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="CreationtimeInput" name="task" placeholder="Task" value="">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-3 control-label">produced_on</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="">
+                                        <input type="text" class="form-control" id="ProductiontimeInput" name="description" placeholder="Description" value="">
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" id="btn-save" value="add">Save changes</button>
+                            <input type="hidden" id="task_id" name="task_id" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Add Car</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="frmTasks" name="frmTasks" class="form-horizontal" novalidate="">
+
+                                <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">ID</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="add-id-Input" name="task" placeholder= value="">
+                                    </div>
+                                </div>
+                                <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">make</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="add-make-Input" name="task" placeholder="Task" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">Model</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="add-model-Input" name="task" placeholder="Task" value="">
+                                    </div>
+                                </div>
+                               <div class="form-group error">
+                                    <label for="inputTask" class="col-sm-3 control-label">Manufacture Date</label>
+                                    <div class="col-sm-9">
+                                        <input type="Date"  class="form-control has-error" id="add-Productiontime-Input" name="task" placeholder="Task" value="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="btn1-save" value="add">Save changes</button>
                             <input type="hidden" id="task_id" name="task_id" value="0">
                         </div>
                     </div>
